@@ -2,22 +2,38 @@ package com.educandoweb.course.entities;
 
 import java.io.Serializable;
 
-public class User implements Serializable{
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "users")
+public class User implements Serializable {
     private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
     private String email;
     private String phone;
     private String password;
 
-    public User(String email, long id, String name, String password, String phone) {
-        this.email = email;
-        this.id = id;
-        this.name = name;
-        this.password = password;
-        this.phone = phone;
+    // Construtor padrão necessário para o JPA
+    public User() {
     }
 
+    // Construtor com todos os atributos (exceto o ID, pois ele é gerado automaticamente)
+    public User(String name, String email, String phone, String password) {
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.password = password;
+    }
+
+    // Getters e setters
     public long getId() {
         return id;
     }
@@ -58,6 +74,7 @@ public class User implements Serializable{
         this.password = password;
     }
 
+    // hashCode e equals
     @Override
     public int hashCode() {
         int hash = 5;
@@ -79,5 +96,4 @@ public class User implements Serializable{
         final User other = (User) obj;
         return this.id == other.id;
     }
-
 }
