@@ -1,0 +1,13 @@
+package com.educandoweb.course.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.educandoweb.course.repositories.UserRepository;
+
+public class UserService {
+
+    @Autowired
+    private UserRepository repository;
+
+
+}
