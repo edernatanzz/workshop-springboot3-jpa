@@ -126,3 +126,9 @@ org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000a   
 2024-12-28 23:14:26.484768-03:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into [*]user (email,name,password,phone,id) values (?,?,?,?,default)"; expected "identifier"; SQL statement:
 insert into user (email,name,password,phone,id) values (?,?,?,?,default) [42001-232]
+2025-01-01 22:38:47.107281-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM TB_ORDER USERS [*]USERS"; SQL statement:
+SELECT * FROM TB_ORDER USERS USERS [42000-232]
+2025-01-01 22:38:48.107919-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM TB_ORDER USERS [*]USERS"; SQL statement:
+SELECT * FROM TB_ORDER USERS USERS [42000-232]
